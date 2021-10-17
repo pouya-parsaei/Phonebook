@@ -1,10 +1,14 @@
 <?php
 
-use App\Core\StupidRouter;
+use App\Models\User;
+use App\Models\Product;
+use App\Core\Routing\Router;
+
 
 # front controller
 
 include 'bootstrap/init.php';
 
-$router = new StupidRouter();
+
+$router = new Router($request);
 $router->run();

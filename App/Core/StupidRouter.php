@@ -11,6 +11,7 @@ class StupidRouter
     {
 
         $this->routes = [
+            '/' => 'home/index.php',
             '/pouya/blue' => 'colors/blue.php',
             '/pouya/red' => 'colors/red.php',
             '/pouya/green' => 'colors/green.php'
@@ -25,9 +26,9 @@ class StupidRouter
             if ($currentRoute == $route) {
                 $this->includeAndDie(BASE_PATH . "views/$view");
             }
-            header("HTTP/1.1 404 Not Found");
-            $this->includeAndDie(BASE_PATH . "views/errors/404.php");
         }
+        header("HTTP/1.1 404 Not Found");
+        $this->includeAndDie(BASE_PATH . "views/errors/404.php");
     }
 
     private function includeAndDie($viewPath)
